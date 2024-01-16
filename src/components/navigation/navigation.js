@@ -1,18 +1,46 @@
-import React from 'react'
+import React from 'react';
+import { BsPerson } from 'react-icons/bs';
 
 export default function Navigation() {
   return (
-    <div>
-        <nav className='bg-black'>
-            <div className=''>
-            <ul className='  flex items-center  space-x-10 text-white '>
-                <a className='py-3 px-10 font-bold ' href='./home'>Home</a>
-                <a className='py-3 px-10 font-bold' href='./home'>logout</a>
-                <a className='absolute right-0 z-10 mt-2 w-60 font-bold origin-top-right rounded-md py-1 ring-1 ring-black ring-opacity-5 shadow-lg focus:outline-none ' href='./home'>Sign-Up</a>
-                <a className='absolute right-0 z-10 mt-2 w-75 font-bold origin-top-right rounded-md py-1 ring-1 ring-black ring-opacity-5 shadow-lg focus:outline-none ' href='./home'>profile</a>
-            </ul>
-            </div>
-        </nav>
+    <div className='bg-black'>
+      <nav>
+        <div className='flex items-center justify-between'>
+          {/* Left section */}
+          <ul className='flex items-center space-x-10 text-white'>
+            <li>
+              <a className='py-3 px-10 font-bold' href='/home'>
+                Home
+              </a>
+            </li>
+            <li>
+              <a className='py-3 px-10 font-bold' href='/logout'>
+                Logout
+              </a>
+            </li>
+          </ul>
+
+          {/* Right section */}
+          <ul className='flex items-center space-x-10 text-white'>
+            <li>
+              <a
+                className='font-bold'
+                href='/signup'
+              >
+                Sign-Up
+              </a>
+            </li>
+            <li>
+              <a
+                className='flex items-center font-bold'
+                href='/profile'
+              >
+                <BsPerson className='mr-2' />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  )
+  );
 }

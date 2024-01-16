@@ -64,6 +64,13 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/*footer section*/}
+      <footer className=' bg-gray-900 text-white py-8 '>
+        <div className='container mx-auto items-center'>
+            <p>&copy; 2024 dropBox. All Right Reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
