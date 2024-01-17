@@ -1,33 +1,38 @@
 import React, { useEffect } from 'react';
-import Navigation from '../../components/navigation/navigation';
 import Typed from 'typed.js';
 
 export default function LandingPage() {
-    useEffect(() =>{
-        const options={
-            strings:["Explore our file management system,upload and manage your files, Have questions? please ask"],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop:true,
-        }
-        const typed=new Typed('.typed-text', options);
-        //cleanup when the components unmounts
-        return () =>{
-            typed.destroy();
-        };
-    }, [])
+  useEffect(() => {
+    const options = {
+      strings: ["Explore our file management system, upload and manage your files, Have questions? please ask"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+    };
+
+    const typed = new Typed('.typed-text', options);
+
+    // Cleanup when the component unmounts
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <div>
-      <Navigation />
-
       {/* Getting Started Section */}
       <section className="bg-cover bg-center text-white py-20" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.pexels.com/photos/4553277/pexels-photo-4553277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")' }}>
         <div className="relative">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <button className="px-6 py-2 rounded-lg bg-black text-white hover:bg-black font-bold">
+            <h1 className=' flex items-center font-bold text-4xl'>
+              <img className=' h-8 w-8 mr-2' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/2202px-Dropbox_Icon.svg.png' alt='Dropbox Logo' />
+              Dropbox
+            </h1>
+
+            <button className='px-6 py-2 rounded-lg bg-black text-white hover:bg-blue-700 font-bold'>
               Get Started
             </button>
-            <p className='typed-text  font-bold'></p>
+            <p className='typed-text font-bold'></p>
           </div>
         </div>
       </section>
