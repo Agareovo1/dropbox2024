@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/Auth';
+
+
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
+
+const handleLogin = async (e) =>{
+  e.preventDefault();
+  const auth = getAuth();
+
+  try{
+    const userCredentials = await signInWithEmailAndPassword(auth, email, password)
+    const user = userCredentials.user;
+    console.log('user signed in');
+
+  }
+  catch(error){
+      console.error('signedup error', error.code, error.message)
+  }
+}
 
 export default function Login() {
+
   return (
     <div className='flex items-center justify-center h-screen'>
       <form className='bg-white p-8 rounded-md shadow-md'>
@@ -31,7 +52,10 @@ export default function Login() {
           Log In
         </button>
         <h3 className='mt-4'>
-        Don't have an account? <a href='/'>Signup</a>
+         <a href='./forgotpassword'>forgot password?</a>
+      </h3>
+        <h3 className='mt-4'>
+         <a href='./signup'>Not a member? Register</a>
       </h3>
       </form>
       
