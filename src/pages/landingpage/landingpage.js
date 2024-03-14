@@ -23,28 +23,26 @@ export default function LandingPage() {
       {/* Getting Started Section */}
       <section className="bg-cover bg-center text-white py-20" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.pexels.com/photos/4553277/pexels-photo-4553277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")' }}>
         <div className="container mx-auto flex flex-col items-center">
-          <h1 className='flex items-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
+          <h1 className='flex items-center font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl'>
             <img className='h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16 mr-2' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/2202px-Dropbox_Icon.svg.png' alt='Dropbox Logo' />
             Dropbox
           </h1>
 
           <div className="mt-4">
-            <button  className='px-4 py-2 rounded-lg bg-black text-white hover:bg-blue-700 text-sm sm:text-base font-bold'>
-              <a href='./login'> 
-              Get Started
-              </a>
+            <button className='px-6 py-3 rounded-lg bg-black text-white hover:bg-blue-700 text-base sm:text-lg font-bold'>
+              <a href='./login'>Get Started</a>
             </button>
           </div>
 
-          <p className='mt-4 text-center typed-text font-bold'></p>
+          <p className='mt-4 text-center typed-text text-base sm:text-lg font-bold'></p>
         </div>
       </section>
 
       {/* Dropbox functions cards */}
       <section className="py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Box Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8">Box Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dropbox function 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img src="https://images.pexels.com/photos/8473774/pexels-photo-8473774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="upload files" className="w-full h-48 object-cover" />

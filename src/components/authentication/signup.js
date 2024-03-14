@@ -1,25 +1,36 @@
 import React from 'react';
-import {getAuth, createUserwithEmailAndPassword} from "firebase/Auth"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
 
+const history = useNavigate()
 
-const auth = getAuth
-createUserwithEmailAndPassword(auth, email, password)
-.then((userCredentials) =>{
-  //signed up
-  const user = userCredentials.user;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-})
-.catch((error) =>{
-  const errorCode = error.code;
-  const errorMessage = error.message
-})
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredentials.user;
+
+      // Now you can interact with the user object or update the database as needed
+      console.log('User signed up:', user);
+      history('/')
+
+    } catch (error) {
+      console.error('Signup error:', error.code, error.message);
+      // Handle error, display a message, etc.
+    }
+  };
 
   return (
     <div className='flex items-center justify-center h-screen'>
-      <form className='bg-white p-8 rounded-md shadow-md'>
-        <div className='mb-4'>
+      <form className='bg-white p-8 rounded-md shadow-md' onSubmit={handleSubmit}>
+      <div className='mb-4'>
           <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>
             First Name
           </label>
@@ -64,10 +75,9 @@ createUserwithEmailAndPassword(auth, email, password)
           Create
         </button>
         <h3 className='mt-4'>
-        Already have an account? <a href='/'>Login</a>
+        Already have an account? <a href='/Login'>Login</a>
       </h3>
       </form>
-      
     </div>
   );
 }

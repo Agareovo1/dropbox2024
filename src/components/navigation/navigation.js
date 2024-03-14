@@ -17,12 +17,12 @@ export default function Navigation() {
           {/* Left section */}
           <ul className='flex items-center space-x-10 text-white'>
             <li>
-              <a className='py-3 px-10 font-bold' href='/home'>
+              <a className='py-3 px-10 font-bold' href='/'>
                 Home
               </a>
             </li>
             <li>
-              <a className='py-3 px-10 font-bold' href='/logout'>
+              <a className='py-3 px-10 font-bold' href='/login'>
                 Logout
               </a>
             </li>
@@ -53,7 +53,7 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className='md:hidden'>
             {/* Add your menu items here */}
-            <a href='/home' className='block py-2 px-4 text-white'>
+            <a href='/' className='block py-2 px-4 text-white'>
               Home
             </a>
             <a href='/logout' className='block py-2 px-4 text-white'>
